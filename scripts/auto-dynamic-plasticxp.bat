@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk1.6.0_11\bin\java" -Dswing.defaultlaf=com.jgoodies.looks.plastic.PlasticXPLookAndFeel -cp ../drop/lightbeam.jar;../lib/forms-1.1.0.jar;C:\jtools\lnf\looks-2.1.4\looks-2.1.4.jar org.jvnet.lightbeam.DynamicPerformanceSuite 10

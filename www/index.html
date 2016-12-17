@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>LightBeam performance testbed - main page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<META content=substance.dev.java.net name=AUTHOR>
+<META content="Copyright (c) 2005-2008 by Kirill Grouchnikov" name=COPYRIGHT>
+<META content="java, look, feel, performance, plaf, swing, ui" name=KEYWORDS>
+<META content="LightBeam performance testbed" name=DESCRIPTION>
+<style>
+    .axial {
+        display: none;
+    }
+    #apphead {
+        display: none;
+    }
+</style>
+</head>
+
+<p>LightBeam is a performance suite for testing Swing look-and-feels. It is mainly targeting 
+look-and-feel writers that want to test the performance aspects of their libraries. 
+It provides a series of tests that measure both static aspects (pure rendering) 
+and dynamic aspects (UI interaction). </p>
+
+<p>This project is licensed under 
+<a href="http://www.opensource.org/osi3.0/licenses/bsd-license.php">Berkeley 
+Software Distribution (BSD) License</a> and requires Java 6.0+ to run.</p>
+
+<p>The entry point for static scenarios is 
+<code><font color="darkblue">org.jvnet.lightbeam.StaticPerformanceSuite</font></code> class. To run it under a specific
+look-and-feel, use the <code><font color="darkblue">-Dswing.defaultlaf</font></code> VM switch. It requires the 
+<a href="https://forms.dev.java.net">FormLayout</a> to be present in the 
+class path. The <code><font color="darkblue">scripts</font></code> folder contains sample scripts to
+run the static scenarios under a number of core and third-party look-and-feels.
+Here is how you can run the static scenario suite under 
+<a href="https://substance.dev.java.net">Substance Autumn</a> look-and-feel:</p>
+
+<code><pre>
+"C:\Program Files\Java\jdk1.6.0_10\bin\java" 
+-Dswing.defaultlaf=org.jvnet.substance.skin.SubstanceAutumnLookAndFeel 
+-cp lightbeam.jar;substance.jar;forms-1.1.0.jar 
+org.jvnet.lightbeam.StaticPerformanceSuite 20
+</pre></code>
+
+<p>where 20 is the number of times to run the scenarios after the warmup stage.</p>
+
+<p>The entry point for dynamic scenarios is 
+<code><font color="darkblue">org.jvnet.lightbeam.DynamicPerformanceSuite</font></code> class. To run it under a specific
+look-and-feel, use the <code><font color="darkblue">-Dswing.defaultlaf</font></code> VM switch. It requires the 
+<a href="https://forms.dev.java.net">FormLayout</a> to be present in the 
+class path. The <code><font color="darkblue">scripts</font></code> folder contains sample scripts to
+run the dynamic scenarios under a number of core and third-party look-and-feels.
+Here is how you can run the dynamic scenario suite under 
+<a href="https://substance.dev.java.net">Substance Autumn</a> look-and-feel:</p>
+
+<code><pre>
+"C:\Program Files\Java\jdk1.6.0_10\bin\java" 
+-Dswing.defaultlaf=org.jvnet.substance.skin.SubstanceAutumnLookAndFeel 
+-cp lightbeam.jar;substance.jar;forms-1.1.0.jar 
+org.jvnet.lightbeam.DynamicPerformanceSuite 10
+</pre></code>
+
+<p>where 10 is the number of times to run the scenarios after the warmup stage.</p>
+
+<p>The distribution archive contains all
+the source files, the required FormLayout library and the sample scripts. To build
+LightBeam from the sources, run the <code><font color="darkblue">build.xml</font></code> script from the top-level
+folder.</p>
