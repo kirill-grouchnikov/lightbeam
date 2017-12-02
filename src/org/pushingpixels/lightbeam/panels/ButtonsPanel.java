@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions are met:
@@ -40,6 +40,7 @@ import org.pushingpixels.lightbeam.commands.ChainCommand;
 import org.pushingpixels.lightbeam.commands.ConfigurationCommand;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
@@ -267,8 +268,7 @@ public class ButtonsPanel extends JPanel {
 						+ "left:pref:grow(1), 4dlu, left:pref:grow(1), "
 						+ "4dlu, left:pref:grow(1)", "");
 		lm.setColumnGroups(new int[][] { { 3, 5, 7, 9 } });
-		DefaultFormBuilder builder = new DefaultFormBuilder(lm);
-		builder.setDefaultDialogBorder();
+		DefaultFormBuilder builder = new DefaultFormBuilder(lm).border(Borders.DIALOG);
 
 		builder.append("");
 		JLabel bLabel = new JLabel("Buttons");

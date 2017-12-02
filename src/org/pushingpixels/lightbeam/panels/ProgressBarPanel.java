@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -38,6 +38,7 @@ import javax.swing.*;
 import org.pushingpixels.lightbeam.*;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
@@ -56,8 +57,7 @@ public class ProgressBarPanel extends JPanel {
 
 		FormLayout horizontalLm = new FormLayout("left:pref:grow", "");
 		DefaultFormBuilder horizontalBuilder = new DefaultFormBuilder(
-				horizontalLm);
-		horizontalBuilder.setDefaultDialogBorder();
+				horizontalLm).border(Borders.DIALOG);
 
 		JProgressBar determinateEnHor = new JProgressBar(
 				JProgressBar.HORIZONTAL, 0, 100);
@@ -108,8 +108,7 @@ public class ProgressBarPanel extends JPanel {
 				"center:pref:grow, 4dlu, center:pref:grow, 4dlu, "
 						+ "center:pref:grow, 4dlu, center:pref:grow, 4dlu, center:pref:grow",
 				"");
-		DefaultFormBuilder verticalBuilder = new DefaultFormBuilder(verticalLm);
-		verticalBuilder.setDefaultDialogBorder();
+		DefaultFormBuilder verticalBuilder = new DefaultFormBuilder(verticalLm).border(Borders.DIALOG);
 		verticalBuilder.append("Enabled");
 		verticalBuilder.append("RTL");
 		verticalBuilder.append("Indeterm");

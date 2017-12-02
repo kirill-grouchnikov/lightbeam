@@ -53,7 +53,8 @@
 
 	<path id="lightbeam.module.classpath">
 		<path refid="${module.jdk.classpath.lightbeam}" />
-		<pathelement location="${lightbeam.lib.dir}/forms-1.1.0.jar" />
+        <pathelement location="${lightbeam.lib.dir}/jgoodies-forms-1.8.0.jar" />
+        <pathelement location="${lightbeam.lib.dir}/jgoodies-common-1.8.1.jar" />
 	</path>
 
 	<patternset id="excluded.from.module.lightbeam" />
@@ -65,7 +66,7 @@
 
 	<path id="lightbeam.module.sourcepath">
 		<dirset dir="${lightbeam.src.dir}">
-			<include name="org/jvnet/lightbeam" />
+			<include name="org/pushingpixels/lightbeam" />
 		</dirset>
 	</path>
 

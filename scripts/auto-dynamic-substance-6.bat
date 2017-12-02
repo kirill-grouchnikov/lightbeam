@@ -1,0 +1,1 @@
+java -Dswing.defaultlaf=org.pushingpixels.substance.api.skin.SubstanceGeminiLookAndFeel -cp ../drop/lightbeam.jar:../../old/substance/drop/substance.jar:../../old/substance/lib/trident.jar:../lib/forms-1.1.0.jar org.pushingpixels.lightbeam.DynamicPerformanceSuite 10

@@ -1,1 +1,1 @@
-"C:\Program Files\Java\jdk1.6.0_11\bin\java" -Dswing.defaultlaf=de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel -cp ../drop/lightbeam.jar;../lib/forms-1.1.0.jar;C:\jtools\lnf\synthetica\synthetica.jar org.jvnet.lightbeam.DynamicPerformanceSuite 10
+java -Dswing.defaultlaf=de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel -cp ../drop/lightbeam.jar:../lib/forms-1.1.0.jar:../../thirdparty/synthetica/synthetica.jar org.pushingpixels.lightbeam.DynamicPerformanceSuite 10

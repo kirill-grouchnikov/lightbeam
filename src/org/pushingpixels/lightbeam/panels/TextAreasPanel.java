@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions are met:
@@ -37,152 +37,144 @@ import javax.swing.text.JTextComponent;
 import org.pushingpixels.lightbeam.*;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
- * Test application panel for testing {@link JTextArea}, {@link JTextField},
- * {@link JTextPane}, {@link JPasswordField}, {@link JEditorPane} and {@link
- * JFormattedTextField} components.
+ * Test application panel for testing {@link JTextArea}, {@link JTextField}, {@link JTextPane},
+ * {@link JPasswordField}, {@link JEditorPane} and {@link JFormattedTextField} components.
  * 
  * @author Kirill Grouchnikov
  */
 public class TextAreasPanel extends JPanel {
-	/**
-	 * Returns the panel contents.
-	 * 
-	 * @return The panel contents.
-	 */
-	private JPanel getContents() {
-		FormLayout lm = new FormLayout(
-				"right:pref, 4dlu, fill:default:grow(1), 4dlu,"
-						+ "fill:default:grow(1), 4dlu, fill:default:grow(1)",
-				"");
-		DefaultFormBuilder builder = new DefaultFormBuilder(lm, new JPanel());
-		builder.setDefaultDialogBorder();
+    /**
+     * Returns the panel contents.
+     * 
+     * @return The panel contents.
+     */
+    private JPanel getContents() {
+        FormLayout lm = new FormLayout("right:pref, 4dlu, fill:default:grow(1), 4dlu,"
+                + "fill:default:grow(1), 4dlu, fill:default:grow(1)", "");
+        DefaultFormBuilder builder = new DefaultFormBuilder(lm, new JPanel())
+                .border(Borders.DIALOG);
 
-		JLabel editorPaneLabel = new JLabel("Editor panes");
-		JLabel textAreaLabel = new JLabel("Text areas");
-		JLabel textPaneLabel = new JLabel("Text panes");
+        JLabel editorPaneLabel = new JLabel("Editor panes");
+        JLabel textAreaLabel = new JLabel("Text areas");
+        JLabel textPaneLabel = new JLabel("Text panes");
 
-		builder.append("", editorPaneLabel);
-		builder.append(textAreaLabel, textPaneLabel);
+        builder.append("", editorPaneLabel);
+        builder.append(textAreaLabel, textPaneLabel);
 
-		JEditorPane jep1 = new JEditorPane("text/html;",
-				"Sample <b>content</b><br> <u>text</u>");
-		builder.append("Enabled", jep1);
+        JEditorPane jep1 = new JEditorPane("text/html;", "Sample <b>content</b><br> <u>text</u>");
+        builder.append("Enabled", jep1);
 
-		JTextArea jta1 = new JTextArea("Sample content text", 3, 20);
-		JTextPane jtp1 = new JTextPane();
-		jtp1.replaceSelection("Sample content text");
-		jtp1.setPreferredSize(new Dimension(100, 40));
-		builder.append(jta1, jtp1);
+        JTextArea jta1 = new JTextArea("Sample content text", 3, 20);
+        JTextPane jtp1 = new JTextPane();
+        jtp1.replaceSelection("Sample content text");
+        jtp1.setPreferredSize(new Dimension(100, 40));
+        builder.append(jta1, jtp1);
 
-		JEditorPane jepNotEditable = new JEditorPane("text/html;",
-				"Sample <b>content</b><br> <u>text</u>");
-		jepNotEditable.setEditable(false);
-		builder.append("Not editable", jepNotEditable);
+        JEditorPane jepNotEditable = new JEditorPane("text/html;",
+                "Sample <b>content</b><br> <u>text</u>");
+        jepNotEditable.setEditable(false);
+        builder.append("Not editable", jepNotEditable);
 
-		JTextArea jtaNotEditable = new JTextArea("Sample content text", 3, 20);
-		jtaNotEditable.setEditable(false);
-		JTextPane jtpNotEditable = new JTextPane();
-		jtpNotEditable.replaceSelection("Sample content text");
-		jtpNotEditable.setPreferredSize(new Dimension(100, 40));
-		jtpNotEditable.setEditable(false);
-		builder.append(jtaNotEditable, jtpNotEditable);
+        JTextArea jtaNotEditable = new JTextArea("Sample content text", 3, 20);
+        jtaNotEditable.setEditable(false);
+        JTextPane jtpNotEditable = new JTextPane();
+        jtpNotEditable.replaceSelection("Sample content text");
+        jtpNotEditable.setPreferredSize(new Dimension(100, 40));
+        jtpNotEditable.setEditable(false);
+        builder.append(jtaNotEditable, jtpNotEditable);
 
-		JEditorPane jep3 = new JEditorPane("text/html;",
-				"Sample <b>content</b><br> <u>text</u>");
-		jep3.setEnabled(false);
-		builder.append("Disabled", jep3);
+        JEditorPane jep3 = new JEditorPane("text/html;", "Sample <b>content</b><br> <u>text</u>");
+        jep3.setEnabled(false);
+        builder.append("Disabled", jep3);
 
-		JTextArea jta3 = new JTextArea("Sample content text", 3, 20);
-		jta3.setEnabled(false);
-		JTextPane jtp3 = new JTextPane();
-		jtp3.replaceSelection("Sample content text");
-		jtp3.setPreferredSize(new Dimension(100, 40));
-		jtp3.setEnabled(false);
-		builder.append(jta3, jtp3);
+        JTextArea jta3 = new JTextArea("Sample content text", 3, 20);
+        jta3.setEnabled(false);
+        JTextPane jtp3 = new JTextPane();
+        jtp3.replaceSelection("Sample content text");
+        jtp3.setPreferredSize(new Dimension(100, 40));
+        jtp3.setEnabled(false);
+        builder.append(jta3, jtp3);
 
-		JEditorPane jepNonOpaque = new JEditorPane("text/html;",
-				"Sample <b>content</b><br> <u>text</u>");
-		jepNonOpaque.setOpaque(false);
-		builder.append("Non opaque", jepNonOpaque);
+        JEditorPane jepNonOpaque = new JEditorPane("text/html;",
+                "Sample <b>content</b><br> <u>text</u>");
+        jepNonOpaque.setOpaque(false);
+        builder.append("Non opaque", jepNonOpaque);
 
-		JTextArea jtaNonOpaque = new JTextArea("Sample content text", 3, 20);
-		jtaNonOpaque.setOpaque(false);
-		JTextPane jtpNonOpaque = new JTextPane();
-		jtpNonOpaque.replaceSelection("Sample content text");
-		jtpNonOpaque.setPreferredSize(new Dimension(100, 40));
-		jtpNonOpaque.setOpaque(false);
-		builder.append(jtaNonOpaque, jtpNonOpaque);
+        JTextArea jtaNonOpaque = new JTextArea("Sample content text", 3, 20);
+        jtaNonOpaque.setOpaque(false);
+        JTextPane jtpNonOpaque = new JTextPane();
+        jtpNonOpaque.replaceSelection("Sample content text");
+        jtpNonOpaque.setPreferredSize(new Dimension(100, 40));
+        jtpNonOpaque.setOpaque(false);
+        builder.append(jtaNonOpaque, jtpNonOpaque);
 
-		JEditorPane jep4 = new JEditorPane("text/html;",
-				"Sample <b>content</b><br> <u>text</u>");
-		jep4.setMargin(new Insets(2, 2, 2, 2));
-		builder.append("With margin", jep4);
+        JEditorPane jep4 = new JEditorPane("text/html;", "Sample <b>content</b><br> <u>text</u>");
+        jep4.setMargin(new Insets(2, 2, 2, 2));
+        builder.append("With margin", jep4);
 
-		JTextArea jta4 = new JTextArea("Sample content text", 3, 20);
-		jta4.setMargin(new Insets(2, 2, 2, 2));
-		JTextPane jtp4 = new JTextPane();
-		jtp4.replaceSelection("Sample content text");
-		jtp4.setPreferredSize(new Dimension(100, 40));
-		jtp4.setMargin(new Insets(2, 2, 2, 2));
-		builder.append(jta4, jtp4);
+        JTextArea jta4 = new JTextArea("Sample content text", 3, 20);
+        jta4.setMargin(new Insets(2, 2, 2, 2));
+        JTextPane jtp4 = new JTextPane();
+        jtp4.replaceSelection("Sample content text");
+        jtp4.setPreferredSize(new Dimension(100, 40));
+        jtp4.setMargin(new Insets(2, 2, 2, 2));
+        builder.append(jta4, jtp4);
 
-		return builder.getPanel();
-	}
+        return builder.getPanel();
+    }
 
-	/**
-	 * Creates a test panel with text components.
-	 */
-	public TextAreasPanel() {
-		setLayout(new BorderLayout());
-		this.add(new JScrollPane(getContents()), BorderLayout.CENTER);
-	}
+    /**
+     * Creates a test panel with text components.
+     */
+    public TextAreasPanel() {
+        setLayout(new BorderLayout());
+        this.add(new JScrollPane(getContents()), BorderLayout.CENTER);
+    }
 
-	@PerformanceScenarioParticipant
-	public PerformanceScenario getSetTextComponentTextPerformanceScenario() {
-		return new BasePerformanceScenario<JTextComponent>(TextAreasPanel.this,
-				JTextComponent.class, false) {
-			int[] perms;
+    @PerformanceScenarioParticipant
+    public PerformanceScenario getSetTextComponentTextPerformanceScenario() {
+        return new BasePerformanceScenario<JTextComponent>(TextAreasPanel.this,
+                JTextComponent.class, false) {
+            int[] perms;
 
-			@Override
-			public String getName() {
-				return "Changing text areas text";
-			};
+            @Override
+            public String getName() {
+                return "Changing text areas text";
+            };
 
-			@Override
-			public void setup() {
-				super.setup();
-				this.perms = LightBeamUtils.getPermutation(
-						LightBeamUtils.dictionary.length, getIterationCount()
-								* this.controls.size() * 2);
-			}
+            @Override
+            public void setup() {
+                super.setup();
+                this.perms = LightBeamUtils.getPermutation(LightBeamUtils.dictionary.length,
+                        getIterationCount() * this.controls.size() * 2);
+            }
 
-			@Override
-			public int getIterationCount() {
-				return 10;
-			};
+            @Override
+            public int getIterationCount() {
+                return 10;
+            };
 
-			@Override
-			public void runSingleIteration(int iterationNumber) {
-				int count = 0;
-				for (JTextComponent field : this.controls) {
-					int index = this.controls.size() * iterationNumber + count;
-					if (field instanceof JFormattedTextField) {
-						int value = 100 + this.perms[index] * 10;
-						field.setText(value + "0.000");
-					} else {
-						field
-								.setText(LightBeamUtils.dictionary[this.perms[index]]
-										+ " "
-										+ LightBeamUtils.dictionary[this.perms[index + 1]]);
-					}
-					count++;
-				}
-				paintImmediately(new Rectangle(0, 0, getWidth(), getHeight()));
-			};
-		};
-	}
+            @Override
+            public void runSingleIteration(int iterationNumber) {
+                int count = 0;
+                for (JTextComponent field : this.controls) {
+                    int index = this.controls.size() * iterationNumber + count;
+                    if (field instanceof JFormattedTextField) {
+                        int value = 100 + this.perms[index] * 10;
+                        field.setText(value + "0.000");
+                    } else {
+                        field.setText(LightBeamUtils.dictionary[this.perms[index]] + " "
+                                + LightBeamUtils.dictionary[this.perms[index + 1]]);
+                    }
+                    count++;
+                }
+                paintImmediately(new Rectangle(0, 0, getWidth(), getHeight()));
+            };
+        };
+    }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions are met:
@@ -39,6 +39,7 @@ import org.pushingpixels.lightbeam.*;
 import org.pushingpixels.lightbeam.commands.*;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
@@ -54,8 +55,7 @@ public class SpinnerPanel extends JPanel {
 		this.setLayout(new BorderLayout());
 
 		FormLayout lm = new FormLayout("right:pref, 4dlu, left:pref:grow", "");
-		DefaultFormBuilder builder = new DefaultFormBuilder(lm);
-		builder.setDefaultDialogBorder();
+		DefaultFormBuilder builder = new DefaultFormBuilder(lm).border(Borders.DIALOG);
 
 		CreationCommand<Component> basicCr = new CreationCommand<Component>() {
 			public Component create() {

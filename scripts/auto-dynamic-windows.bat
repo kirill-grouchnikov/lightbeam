@@ -1,1 +1,1 @@
-"C:\Program Files\Java\jdk1.6.0_11\bin\java" -Dswing.defaultlaf=com.sun.java.swing.plaf.windows.WindowsLookAndFeel -cp ../drop/lightbeam.jar;../lib/forms-1.1.0.jar org.jvnet.lightbeam.DynamicPerformanceSuite 10
+java -Dswing.defaultlaf=com.sun.java.swing.plaf.windows.WindowsLookAndFeel -cp ../drop/lightbeam.jar;../lib/forms-1.1.0.jar org.jvnet.lightbeam.DynamicPerformanceSuite 10

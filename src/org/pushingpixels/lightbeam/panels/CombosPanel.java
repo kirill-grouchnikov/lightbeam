@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -38,6 +38,7 @@ import javax.swing.*;
 import org.pushingpixels.lightbeam.*;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
@@ -53,8 +54,7 @@ public class CombosPanel extends JPanel {
 	 */
 	private JPanel getLeftComboPanel() {
 		FormLayout lm = new FormLayout("right:pref, 4dlu, fill:pref:grow", "");
-		DefaultFormBuilder builder = new DefaultFormBuilder(lm);
-		builder.setDefaultDialogBorder();
+		DefaultFormBuilder builder = new DefaultFormBuilder(lm).border(Borders.DIALOG);
 
 		builder.appendSeparator("Simple combos");
 
@@ -122,8 +122,7 @@ public class CombosPanel extends JPanel {
 	 */
 	private JPanel getRightComboPanel() {
 		FormLayout lm = new FormLayout("right:pref, 4dlu, left:pref:grow", "");
-		DefaultFormBuilder builder = new DefaultFormBuilder(lm);
-		builder.setDefaultDialogBorder();
+		DefaultFormBuilder builder = new DefaultFormBuilder(lm).border(Borders.DIALOG);
 
 		builder.appendSeparator("Empty combos");
 		JComboBox emptyModelCombo = new JComboBox(new String[] {});

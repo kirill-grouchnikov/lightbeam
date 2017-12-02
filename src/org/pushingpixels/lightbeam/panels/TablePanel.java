@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions are met:
@@ -238,12 +238,6 @@ public class TablePanel extends JPanel {
 				index--;
 			}
 			this.fireTableRowsDeleted(startIndex, startIndex + count - 1);
-		}
-	}
-
-	private class NullTableRenderer extends DefaultTableCellRenderer {
-		@Override
-		public void paint(Graphics g) {
 		}
 	}
 

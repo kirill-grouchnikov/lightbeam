@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions are met:
@@ -29,7 +29,9 @@
  */
 package org.pushingpixels.lightbeam;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -41,7 +43,7 @@ public class IconManager {
 		if (iconList == null) {
 			iconList = new LinkedList<Icon>();
 			ClassLoader cl = IconManager.class.getClassLoader();
-			String prefix = "org/jvnet/lightbeam/resources/flag_";
+			String prefix = "org/pushingpixels/lightbeam/resources/flag_";
 			iconList.add(new ImageIcon(cl.getResource(prefix + "canada.png")));
 			iconList.add(new ImageIcon(cl.getResource(prefix + "denmark.png")));
 			iconList.add(new ImageIcon(cl.getResource(prefix + "germany.png")));
@@ -49,8 +51,7 @@ public class IconManager {
 			iconList.add(new ImageIcon(cl.getResource(prefix + "mexico.png")));
 			iconList.add(new ImageIcon(cl.getResource(prefix + "russia.png")));
 			iconList.add(new ImageIcon(cl.getResource(prefix + "turkey.png")));
-			iconList.add(new ImageIcon(cl.getResource(prefix
-					+ "united_states.png")));
+			iconList.add(new ImageIcon(cl.getResource(prefix + "united_states.png")));
 		}
 		return iconList;
 	}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2010 LightBeam Kirill Grouchnikov. All Rights Reserved.
+ * Copyright (c) 2008-2016 LightBeam Kirill Grouchnikov. All Rights Reserved.
  *
  * Redistribution and use in source and binary forms, with or without 
  * modification, are permitted provided that the following conditions are met:
@@ -85,43 +85,6 @@ public class ListPanel extends JPanel {
 		 */
 		public int getSize() {
 			return model.size();
-		}
-
-		/**
-		 * Moves the element at the specified index one position up.
-		 * 
-		 * @param index
-		 * 		Element index.
-		 */
-		public void moveUp(int index) {
-			String entry = model.get(index);
-			model.set(index, model.get(index - 1));
-			model.set(index - 1, entry);
-			fireContentsChanged(this, index - 1, index);
-		}
-
-		/**
-		 * Moves the element at the specified index one position down.
-		 * 
-		 * @param index
-		 * 		Element index.
-		 */
-		public void moveDown(int index) {
-			String entry = model.get(index);
-			model.set(index, model.get(index + 1));
-			model.set(index + 1, entry);
-			fireContentsChanged(this, index, index + 1);
-		}
-
-		/**
-		 * Deletes the element at the specified index.
-		 * 
-		 * @param index
-		 * 		Element index.
-		 */
-		public void delete(int index) {
-			model.remove(index);
-			fireIntervalRemoved(this, index, index);
 		}
 
 		/**
