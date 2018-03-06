@@ -326,14 +326,14 @@ public class DynamicPerformanceSuite {
                 StringBuilder sbKey = new StringBuilder();
                 Formatter keyFormatter = new Formatter(sbKey, Locale.US);
                 keyFormatter.format("%1$15s : %2$s", tabTitle, scenario.getName());
-                keyFormatter.close();
 
                 StringBuilder sb = new StringBuilder();
                 Formatter formatter = new Formatter(sb, Locale.US);
                 formatter.format("%1$4d [cpu %2$4d / usr %3$4d]", time / 1000000,
                         edtCPUTime / 1000000, edtUserTime / 1000000);
-                formatter.close();
                 System.out.println(sb.toString() + keyFormatter.toString());
+                keyFormatter.close();
+                formatter.close();
                 total += time;
 
                 if (toTime) {
