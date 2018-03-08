@@ -27,6 +27,8 @@ As the suite runs, it prints out thread user time and thread CPU time spent on e
 
 `avg   51, min   48, max   56, dev 0.05            List : Moving elements in a large list`
 
+The numbers are milliseconds it takes to render a frame with a number of matching components (buttons, sliders etc) to an offscreen buffer (the smaller, the better).
+
 With this, you can compare the performance of your look-and-feel with that of core / third-party libraries. You can also track performance improvements and regressions during the development cycle.
 
 Here is the script I use for Substance:
