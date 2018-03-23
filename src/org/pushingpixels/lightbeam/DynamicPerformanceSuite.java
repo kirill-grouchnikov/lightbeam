@@ -415,7 +415,7 @@ public class DynamicPerformanceSuite {
                             StringBuilder sb = new StringBuilder();
                             Formatter formatter = new Formatter(sb, Locale.US);
                             formatter.format(
-                                    "avg %1$4d, min %2$4d, max %3$4d, dev %4$4.2f %5$15s : %6$s",
+                                    "avg %1$5d, min %2$5d, max %3$5d, dev %4$4.2f %5$15s : %6$s",
                                     avg, min, max, deviance, timesInfo.tabTitle,
                                     timesInfo.scenarioName);
                             formatter.close();
