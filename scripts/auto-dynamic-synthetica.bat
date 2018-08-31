@@ -1,1 +1,0 @@
-java -Dswing.defaultlaf=de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel -cp ../drop/lightbeam.jar:../lib/forms-1.1.0.jar:../../thirdparty/synthetica/synthetica.jar org.pushingpixels.lightbeam.DynamicPerformanceSuite 10

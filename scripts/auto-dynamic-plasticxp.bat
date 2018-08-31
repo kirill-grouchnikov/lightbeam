@@ -1,1 +1,0 @@
-java -Dswing.defaultlaf=com.jgoodies.looks.plastic.PlasticXPLookAndFeel -cp ../drop/lightbeam.jar:../lib/forms-1.1.0.jar:../../thirdparty/jgoodies/jgoodies-looks-2.5.3.jar:../../thirdparty/jgoodies/jgoodies-common-1.7.0.jar org.pushingpixels.lightbeam.DynamicPerformanceSuite 10
